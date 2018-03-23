@@ -9,6 +9,7 @@ $('#set-color').on('click', setColor);
 function makeSquare() {
 	let square = $('<div>');
 	square.addClass('square');
+	square.on('click',setBackground);
 	return square;
 }
 
@@ -23,3 +24,10 @@ function makeSquares(amount) {
 }
 
 makeSquares(20);
+
+function setBackground(event) {
+	console.log(event);
+	let color = $('.brush').css('background-color');
+
+	$(event.currentTarget).css('background-color',color);
+}
