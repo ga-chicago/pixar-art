@@ -19,11 +19,11 @@ const makeDiv = () => {
 }
 
 
-for(let i = 1; i <= 20; i++) {
+for(let i = 1; i <= 8000; i++) {
 	makeDiv(i);
 }
 
-$('body').on('click', '.square', (event) => {
+$('body').on('mouseover', '.square', (event) => {
 
 	//get the background color of the brush box
 	
