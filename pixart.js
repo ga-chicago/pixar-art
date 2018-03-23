@@ -25,7 +25,7 @@ button.on('click', function (event) {
 // Hint: use .append()
 
 const divSquares = () => {
-	for(let i = 0; i < 21; i++){
+	for(let i = 0; i < 8001; i++){
 		const div = $('<div>');
 		div.addClass('square');
 		div.appendTo($('body'))		
@@ -42,8 +42,18 @@ divSquares();
 
 let squares = $('.square');
 
-squares.on('click', function () {
+squares.on('mouseover', function () {
 	let target = $(event.currentTarget)
 	target.css('background-color', input.val())
 	console.log('there was a click')
 })
+
+
+// commit 6
+// Modify the CSS so that the "square" class has a height and width of 10px and a margin of 0.
+	//already set up in the css file
+// Modify your code so that you are creating 8000 divs instead of 20.
+	//updated above
+
+// Change the event that changes your box colors from 'click' to 'mouseover'
+	//updated above
