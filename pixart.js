@@ -44,6 +44,6 @@ let squares = $('.square');
 
 squares.on('click', function () {
 	let target = $(event.currentTarget)
-	target.css('background-color', 'green')
+	target.css('background-color', input.val())
 	console.log('there was a click')
 })
