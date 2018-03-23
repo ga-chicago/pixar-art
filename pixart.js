@@ -40,7 +40,7 @@ const makeDiv = () => {
 
 
 
-	for(let i = 0; i < 20; i++) {
+	for(let i = 0; i < 8000; i++) {
 	const div = $("<div class='square')>")
 	div.appendTo($("body"))
 }
@@ -50,7 +50,7 @@ const makeDiv = () => {
 makeDiv();
 
 
-$(".square").on("click", function(event) {
+$(".square").on("mouseover", function(event) {
 	 console.log(event.currentTarget)
 	const changeSquare = $(event.currentTarget)
 	console.log(changeSquare) 
@@ -58,37 +58,15 @@ $(".square").on("click", function(event) {
 
 })
 
-
+//above
 // Add functionality so that when I click on each "square", it changes the color of that individual square to "green"
 // Hint: either add the event listener while creating the squares, or listen for events on the body elemen
 
+// Commit 6
+// Modify the CSS so that the "square" class has a height and width of 10px and a margin of 0.
+// Modify your code so that you are creating 8000 divs instead of 20.
+// Change the event that changes your box colors from 'click' to 'mouseover'
+// Paint a picture!
 
 
 
-// $("h2").on("click", (event) => {
-
-// 	// make sure its workin by:
-// 	// console.log("there was a click")
-
-// 	//make sure you are clicking on what you want to click on 
-// 	// console.log(event.currentTarget)
-// 	const theH2 =  $(event.currentTarget)
-// 	// some logic 
-
-
-// if(theH2.css("background-color") === "rgb(255, 0, 0)") {
-
-// 	theH2.css("background", "none")
-
-// } else {
-// 	theH2.css("background-color", "rgb(255, 0, 0)")
-// }
-
-
-
-
-// 	// if no background 
-
-// 	// add it
-// 	//else revmoe it 	
-// })
