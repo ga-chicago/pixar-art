@@ -7,7 +7,7 @@
     //  <button id="set-color">Set Color</button>
     // </form>
     // <div class="brush"></div>
-
+//commit 1
 let brushBox = $('.brush');
 let button = $('#set-color')
 let input = $('input')
@@ -18,6 +18,19 @@ button.on('click', function (event) {
 	event.preventDefault();
 })
 
-//create something to connect the input value to rgb value property
+// commit 2 
+	//already happening without writing any code
 
+// Create 20 divs of the "square" class and append them to the body
+// Hint: use .append()
+
+const divSquares = () => {
+	for(let i = 0; i < 21; i++){
+		const div = $('<div>');
+		div.addClass('square');
+		div.appendTo($('body'))		
+	} 	
+}
+
+divSquares();
 
