@@ -30,7 +30,34 @@ createSquare();
 //Add functionality so that when I click on each "square",
 //it changes the color of that individual square to "green"
 
-$('.square').on('mouseover' , (e) => {
+$('.square').on('mouseover', (e) => {
   let $target = $(event.currentTarget);
   $target.css('background-color', $input.val());
 })
+
+//bonus
+// Add a color swatch.
+// You should have 3 boxes
+const colorSwatch = () => {
+  for (let i = 0; i < 3; i++) {
+    const $newDiv = $('<div>');
+    $newDiv.addClass('swatch')
+    $newDiv.appendTo($('.controls'));
+  }
+}
+
+colorSwatch();
+
+let swatches = $('.swatch');
+swatches.css('background-color', 'green')
+swatches.css({
+  'height' : '100px',
+  'width' : '100px',
+  'margin' : '10px',
+  'display' : 'inline-block'
+})
+
+//add the most recent 3 colors used.
+//store the colors in an array
+// When you click on each of those boxes,
+// it should set the current brush color back to that color.
