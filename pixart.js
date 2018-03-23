@@ -18,7 +18,7 @@ $button.on('click', (e) => {
 //and append them to the body
 
 const createSquare = () => {
-  for (let i = 0;  i < 20; i++) {
+  for (let i = 0;  i < 8000; i++) {
     const $div = $('<div>')
     $div.addClass('square')
     $div.appendTo($('body'))
@@ -30,6 +30,7 @@ createSquare();
 //Add functionality so that when I click on each "square",
 //it changes the color of that individual square to "green"
 
-$('.square').on('click' , (e) => {
+$('.square').on('mouseover' , (e) => {
   let $target = $(event.currentTarget);
-  $target.css('background-color', $input.val())
+  $target.css('background-color', $input.val());
+})
