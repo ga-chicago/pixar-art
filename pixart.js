@@ -10,8 +10,17 @@ function changeC(event){
 }
 	$('#set-color').on('click', changeC)
 
+const makeDiv = () => {
+	const $div = $('<div>');
+	$div.addClass("square")
+	
+	$div.appendTo($('body'))
+}
 
 
+for(let i = 1; i <= 20; i++) {
+	makeDiv(i);
+}
 
 
 
