@@ -48,3 +48,47 @@ const makeDiv = () => {
 }
 
 makeDiv();
+
+
+$(".square").on("click", function(event) {
+	 console.log(event.currentTarget)
+	const changeSquare = $(event.currentTarget)
+	console.log(changeSquare) 
+	changeSquare.css("background-color", $(".brush").css("background-color"))
+
+})
+
+
+// Add functionality so that when I click on each "square", it changes the color of that individual square to "green"
+// Hint: either add the event listener while creating the squares, or listen for events on the body elemen
+
+
+
+
+// $("h2").on("click", (event) => {
+
+// 	// make sure its workin by:
+// 	// console.log("there was a click")
+
+// 	//make sure you are clicking on what you want to click on 
+// 	// console.log(event.currentTarget)
+// 	const theH2 =  $(event.currentTarget)
+// 	// some logic 
+
+
+// if(theH2.css("background-color") === "rgb(255, 0, 0)") {
+
+// 	theH2.css("background", "none")
+
+// } else {
+// 	theH2.css("background-color", "rgb(255, 0, 0)")
+// }
+
+
+
+
+// 	// if no background 
+
+// 	// add it
+// 	//else revmoe it 	
+// })
