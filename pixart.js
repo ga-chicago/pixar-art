@@ -17,7 +17,6 @@ $button.on('click', (e) => {
 //Create 20 divs of the "square" class
 //and append them to the body
 
-
 const createSquare = () => {
   for (let i = 0;  i < 20; i++) {
     const $div = $('<div>')
@@ -26,3 +25,11 @@ const createSquare = () => {
   }
 }
 createSquare();
+
+//commit 4
+//Add functionality so that when I click on each "square",
+//it changes the color of that individual square to "green"
+
+$('.square').on('click' , (e) => {
+  let $target = $(event.currentTarget);
+  $target.css('background-color', $input.val())
