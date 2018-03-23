@@ -34,3 +34,16 @@ const divSquares = () => {
 
 divSquares();
 
+
+// Add functionality so that when I click on each "square", it changes the 
+// color of that individual square to "green"
+// Hint: either add the event listener while creating the squares, or listen 
+// for events on the body element
+
+let squares = $('.square');
+
+squares.on('click', function () {
+	let target = $(event.currentTarget)
+	target.css('background-color', 'green')
+	console.log('there was a click')
+})
