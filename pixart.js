@@ -1,11 +1,11 @@
 
 let $button = $('#set-color');
-let brushBox = $('.brush');
-let input = $('input');
+let $brushBox = $('.brush');
+let $input = $('input');
 
 //Commit 1 & 2
 $button.on('click', (event) => {
-	brushBox.css('background-color', input.val())
+	$brushBox.css('background-color', $input.val())
 	console.log('there was a click');
 	event.preventDefault();
 })
@@ -15,7 +15,7 @@ $button.on('click', (event) => {
 
 const addSquare = () => {
 	// Define number of squares
-	for(let i = 0; i < 21; i++){
+	for(let i = 0; i < 8001; i++){
 
 	// Create div element of the square class
 	const $div = $('<div>');
@@ -36,9 +36,9 @@ addSquare();
 // Hint: either add the event listener while creating the squares, 
 // or listen for events on the body element
 
-$('.square').on('click', () => {
-	let target = $(event.currentTarget);
+$('.square').on('mouseover', () => {
+	let $target = $(event.currentTarget);
 	//$square = $('.square');
 	console.log('click');
-	target.css('background-color', input.val());
+	$target.css('background-color', $input.val());
 })
