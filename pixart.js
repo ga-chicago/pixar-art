@@ -11,11 +11,17 @@
 let brushBox = $('.brush');
 let button = $('#set-color')
 let input = $('input')
+let currentColors = [];
+let brushColor = brushBox.css('background-color')
+
  //change color of box
 button.on('click', function (event) {
-	brushBox.css('background-color', input.val())
-	console.log('there was a click')
 	event.preventDefault();
+	brushBox.css('background-color', input.val())
+	brushColor = brushBox.css('background-color')
+	swatchArray();
+	fillSwatches();
+	input.val("");
 })
 
 // commit 2 
@@ -44,8 +50,7 @@ let squares = $('.square');
 
 squares.on('mouseover', function () {
 	let target = $(event.currentTarget)
-	target.css('background-color', input.val())
-	console.log('there was a click')
+	target.css('background-color', brushColor)
 })
 
 
@@ -57,3 +62,58 @@ squares.on('mouseover', function () {
 
 // Change the event that changes your box colors from 'click' to 'mouseover'
 	//updated above
+
+
+// Add a color swatch. You should have 3 boxes with the most recent 3 colors used. 
+// When you click on each of those boxes, it should set the current brush color back to that color.
+
+
+const swatchSquares = () => {
+	for(let i = 0; i < 3; i++){
+		const div = $('<div>');
+		div.addClass('swatch');
+		div.attr('id', 'swatch-' + i)
+		div.appendTo($('.controls'))		
+	} 	
+}
+
+swatchSquares();
+
+let swatches = $('.swatch');
+swatches.css('background-color', '#E7E5DB')
+swatches.css({
+	'width': '100px',
+	'height': '100px',
+	'margin': '15px 10px',
+	'display': 'inline-block'
+});
+
+//function that calls the ID for the thing i clicked on
+const getID = () => {
+	
+}
+
+swatches.on('click', function (event) {
+		let target = $(event.currentTarget)
+	// target.css('background-color', ())
+})
+
+const swatchArray = () => {
+	currentColors.unshift(input.val())
+}
+
+let swatch0 = $('#swatch-0')
+let swatch1 = $('#swatch-1')
+let swatch2 = $('#swatch-2')
+
+const fillSwatches = () => {
+	swatch0.css('background-color', currentColors[0])
+	swatch1.css('background-color', currentColors[1])
+	swatch2.css('background-color', currentColors[2])
+}
+
+
+
+
+
+
