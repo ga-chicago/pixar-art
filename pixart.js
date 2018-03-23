@@ -32,13 +32,19 @@ brush.css("background-color", colorChange)
 })
 
 
-// in value
+// Commit 3
+// Create 20 divs of the "square" class and append them to the body
+// Hint: use .append()
 
-// .val() wheneveratever you put in 
-
-
-
-
+const makeDiv = () => {
 
 
-// HINT: You will notice that the page refreshes whenever you click the button. You need to prevent this from happening using a method you have not used before. Google "javascript event prevent default". You can also reference this portion of the Events & Callbacks lesson plan.
+
+	for(let i = 0; i < 20; i++) {
+	const div = $("<div class='square')>")
+	div.appendTo($("body"))
+}
+	
+}
+
+makeDiv();
