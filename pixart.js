@@ -10,9 +10,30 @@ console.log("Linked");
 
 // $(".brush").css("background", "red")
 
+const newBrush = function() {
+
+	for(let i = 0; i < 3; i++) {
+
+		const div = $("<div class='recent-colors'>");
+
+	div.appendTo($(".controls"))	
+
+	}
+
+
+}
+
+newBrush();
+
+
+
+
+
 const button = $("button")
 
 const text = $("#color-field")
+
+
 
 
 // const input =
@@ -24,6 +45,10 @@ button.on("click", function(event) {
 	event.preventDefault()
 
 const colorChange = text.val()
+
+$(".recent-colors").eq(2).css("background-color", $(".recent-colors").eq(1).css("background-color"))
+$(".recent-colors").eq(1).css("background-color", $(".recent-colors").eq(0).css("background-color"))
+$(".recent-colors").eq(0).css("background-color", $(".brush").css("background-color"))
 
 const brush = $(".brush")
 
@@ -48,6 +73,9 @@ const makeDiv = () => {
 }
 
 makeDiv();
+
+
+
 
 
 $(".square").on("mouseover", function(event) {

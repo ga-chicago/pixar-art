@@ -7,6 +7,17 @@
   margin: 15px auto;
 }
 
+
+.recent-colors {
+  width: 70px;
+  height: 70px;
+  background: #1B4370;
+  margin: 15px 25px;
+  border: 2px solid white;
+  display: inline-block;
+
+}
+
 .square {
   float: left;
   width: 10px;
