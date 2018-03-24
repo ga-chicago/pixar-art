@@ -8,7 +8,7 @@ function setColor() {
 	})
 	event.preventDefault();
 }
-button.on("click", setColor);
+button.click(setColor);
 
 ////// Commit 2 is already working when pressing the enter key from inside the input field ////////////////
 
@@ -17,3 +17,9 @@ for (let i = 0; i < 20; i++) {
 	div.addClass('square')
  	$('body').append(div)
 }
+
+$('.square').click((event) => {
+	$(event.currentTarget).css({'background-color': 'green'})
+})
+
+
