@@ -3,14 +3,19 @@ console.log("hello");
 let $button = $('#set-color')
 let $brushBox = $('.brush')
 let $input = $('input')
+let $inputArray = [];
 //commit 1 & 2
 // When I click the "Set Color" button
 //it should change the color of the "brush" box to the color
 //I specify in the input field.
 $button.on('click', (e) => {
-  $brushBox.css('background-color', $input.val())
-  console.log("there was a click");
-  event.preventDefault()
+  $brushBox.css('background-color', $input.val());
+  $inputArray.push($input.val());
+  //console.log("there was a click");
+  event.preventDefault();
+  for (let i = 0; i < 3; i ++) {
+    swatches.eq(i).css('background-color', $inputArray[$inputArray.length-(i+1)])
+  }
 })
 
 //commit 3
@@ -41,14 +46,15 @@ $('.square').on('mouseover', (e) => {
 const colorSwatch = () => {
   for (let i = 0; i < 3; i++) {
     const $newDiv = $('<div>');
-    $newDiv.addClass('swatch')
+    $newDiv.attr('id', 'swatch-' + i)
     $newDiv.appendTo($('.controls'));
+    $newDiv.addClass('swatches')
   }
 }
 
 colorSwatch();
 
-let swatches = $('.swatch');
+let swatches = $('.swatches');
 swatches.css('background-color', 'green')
 swatches.css({
   'height' : '100px',
@@ -57,7 +63,18 @@ swatches.css({
   'display' : 'inline-block'
 })
 
-//add the most recent 3 colors used.
-//store the colors in an array
 // When you click on each of those boxes,
 // it should set the current brush color back to that color.
+//create a click event that grabs the color of the div
+
+// $swatches.on('click', (e) => {
+//   let $brushTarget = $(e.currentTarget);
+//   let $brushColor = $brushTarget.css('background-color')
+//   console.log($brushColor);
+//   $brushBox.css('background-color', $brushColor);
+//   variable of target = background color of brush
+//
+// //GRAB back ground color of swatches
+// //and put the background color on the
+//   $brushBox.css('background-color' , '#swatch-' + )
+// })
