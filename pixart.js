@@ -15,13 +15,13 @@ button.click((event) => {
 
 ////// Commit 2 is already working when pressing the enter key from inside the input field ////////////////
 
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < 8000; i++) {
 	const div = $('<div>')
 	div.addClass('square')
  	$('body').append(div)
 }
 
-$('.square').click((event) => {
+$('.square').mouseover((event) => {
 	let square = $(event.currentTarget)
 	setColor(square, event)
 })
