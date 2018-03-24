@@ -1,14 +1,17 @@
 const button = $("#set-color");
 
-function setColor() {
+function setColor(element, event) {
 	const color = $('#color-field').val();
-	let brush = $('.brush')
-	brush.css({
+	element.css({
 		'background-color': color
 	})
 	event.preventDefault();
 }
-button.click(setColor);
+
+button.click((event) => {
+	let brush = $('.brush')
+	setColor(brush, event)
+});
 
 ////// Commit 2 is already working when pressing the enter key from inside the input field ////////////////
 
@@ -19,7 +22,8 @@ for (let i = 0; i < 20; i++) {
 }
 
 $('.square').click((event) => {
-	$(event.currentTarget).css({'background-color': 'green'})
+	let square = $(event.currentTarget)
+	setColor(square, event)
 })
 
 
