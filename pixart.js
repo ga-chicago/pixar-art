@@ -1,12 +1,6 @@
 // When I click the "Set Color" button, it should change the color of the "brush" box to the color I specify in the input field.
 // Use jQuery to select the element and add an event listener
   
- //locate div for brush box
-    // <form id="form">
-    //  <input type="text" id="color-field"></input>
-    //  <button id="set-color">Set Color</button>
-    // </form>
-    // <div class="brush"></div>
 //commit 1
 let brushBox = $('.brush');
 let button = $('#set-color')
@@ -14,7 +8,7 @@ let input = $('input')
 let currentColors = [];
 let brushColor = brushBox.css('background-color')
 
- //change color of box
+ //change color of Brushbox
 button.on('click', function (event) {
 	event.preventDefault();
 	brushBox.css('background-color', input.val())
@@ -27,6 +21,7 @@ button.on('click', function (event) {
 // commit 2 
 	//already happening without writing any code
 
+//commit 3
 // Create 20 divs of the "square" class and append them to the body
 // Hint: use .append()
 
@@ -40,11 +35,12 @@ const divSquares = () => {
 
 divSquares();
 
-
+//comit 4 & 5
 // Add functionality so that when I click on each "square", it changes the 
 // color of that individual square to "green"
-// Hint: either add the event listener while creating the squares, or listen 
-// for events on the body element
+
+//Modify your code so that when I click on each "square", it changes to the color 
+//I set using my input instead of "green" every time.
 
 let squares = $('.square');
 
@@ -64,6 +60,7 @@ squares.on('mouseover', function () {
 	//updated above
 
 
+//Bonus
 // Add a color swatch. You should have 3 boxes with the most recent 3 colors used. 
 // When you click on each of those boxes, it should set the current brush color back to that color.
 
@@ -88,15 +85,6 @@ swatches.css({
 	'display': 'inline-block'
 });
 
-//function that calls the ID for the thing i clicked on
-const getID = () => {
-	
-}
-
-swatches.on('click', function (event) {
-		let target = $(event.currentTarget)
-	// target.css('background-color', ())
-})
 
 const swatchArray = () => {
 	currentColors.unshift(input.val())
@@ -113,7 +101,22 @@ const fillSwatches = () => {
 }
 
 
+// When you click on each of those boxes, it should set the current brush color back to that color.
 
+swatch0.on('click', function (event){
+	brushColor = swatch0.css('background-color')
+	console.log(brushColor)
+})
+
+swatch1.on('click', function (event){
+	brushColor = swatch1.css('background-color')
+	console.log(brushColor)
+})
+
+swatch2.on('click', function (event){
+	brushColor = swatch2.css('background-color')
+	console.log(brushColor)
+})
 
 
 
