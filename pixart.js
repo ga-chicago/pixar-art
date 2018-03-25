@@ -1,39 +1,60 @@
+const pixar = {
 
+	brush: document.getElementsByClassName('brush')[0],
 
+	textfield: document.getElementById('color-field'),
 
-document.getElementById('set-color').addEventListener('click',(event)=>{
+	canvas: document.getElementById('canvas'),
+
 	
 
-	const color = document.getElementById('color-field').value
-	
-	document.getElementsByClassName('brush')[0].style.backgroundColor = color;
-	
-	
+	generatePixels(){
 
-	document.getElementById('canvas').addEventListener('mouseover',(event)=>{
+		for(let i = 0; i <5031;i++){
 
+			const divs = document.createElement('div');
 
+			this.canvas.appendChild(divs);
+
+			divs.classList.add('pixels');
+
+		}
+
+	},
+
+	changeBrush(color){
 		
+		this.brush.style.backgroundColor = color;
+
+
+	},
+
+
+	textInput: document.getElementById('set-color').addEventListener('click',(event)=>{
+		
+		let colorValue = pixar.textfield.value;
+
+		pixar.changeBrush(colorValue);
+
+		event.preventDefault();
+	}),
+
+
+	
+	
+	
 
 
 
-	})
+
+	
+
+}
+
+
+pixar.generatePixels()
 
 
 
 
 
-	// console.log(this);
-
-	// console.log(event);
-
-	// console.log(event.target);
-
-	// console.log(event.currentTarget);
-	event.preventDefault();
-})
-
-
-// $('#set-color').on('click',()=>{
-// 	alert('Hello');
-// })
