@@ -28,3 +28,23 @@ h1 {
 body {
   background-image: url('ps_neutral.png');
 }
+
+
+#canvas{
+
+  background-color: #f9f4c7;
+
+  height:600px;
+
+  margin-top: 70px;
+
+}
+
+
+
+.paint {
+
+  height:5px;
+
+  width:5px;
+}
