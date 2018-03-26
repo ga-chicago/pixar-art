@@ -10,6 +10,9 @@ console.log("Linked");
 
 // $(".brush").css("background", "red")
 
+
+// This is for the three new brushes or squares. looping through to create them with a class of recent colors. 
+// appending it to the div class that was already created 
 const newBrush = function() {
 
 	for(let i = 0; i < 3; i++) {
@@ -30,8 +33,10 @@ newBrush();
 
 
 const button = $("button")
+//finding the button
 
 const text = $("#color-field")
+// the text back where we can type 
 
 
 
@@ -45,10 +50,16 @@ button.on("click", function(event) {
 	event.preventDefault()
 
 const colorChange = text.val()
+// changing text so it can take a input value
+// text was changed to color to colorfield class which was where would type 
 
+
+// changing the background color of the three additional squares addeds
 $(".recent-colors").eq(2).css("background-color", $(".recent-colors").eq(1).css("background-color"))
 $(".recent-colors").eq(1).css("background-color", $(".recent-colors").eq(0).css("background-color"))
 $(".recent-colors").eq(0).css("background-color", $(".brush").css("background-color"))
+
+
 
 const brush = $(".brush")
 
@@ -78,12 +89,14 @@ makeDiv();
 
 
 
+
+
 $(".square").on("mouseover", function(event) {
-	 console.log(event.currentTarget)
+	 // console.log(event.currentTarget)
 	const changeSquare = $(event.currentTarget)
 	console.log(changeSquare) 
 	changeSquare.css("background-color", $(".brush").css("background-color"))
-
+//changing color to whatever the background color of the brush is 
 })
 
 //above
